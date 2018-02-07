@@ -11,7 +11,7 @@ return [
   |
   */
 
-  "app_name" => "Authenticator",
+  "app_name" => "GasPoint",
 
   /*
   |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
   | The admin login redirection url
   |
   */
-   "admin_login_redirect_url" => "/admin/users/dashboard",
+   "admin_login_redirect_url" => "/dashboard",
 
   /*
   |--------------------------------------------------------------------------
@@ -99,5 +99,5 @@ return [
   /*
    * Set to true if you want to use the user gravatar instead
    */
-  "use_gravatar" => false,
+  "use_gravatar" => true,
 ];

@@ -55,23 +55,15 @@
         <div class="main-container transition--fade">
             <section class="cover cover-12 form--dark imagebg height-100 parallax" data-overlay="4">
                 <div class="background-image-holder">
-                    <img alt="image" src="img/hero14.jpg" />
+                    <img alt="image" src="img/hero2.jpg" />
                 </div>
                 <div class="container pos-vertical-center text-center-xs">
                     <div class="row pos-vertical-align-columns">
                         <div class="col-md-7 col-sm-8 col-sm-offset-2">
-                            <h2>Get cooking gas, in no time with Gas point</h2>
-                            <div class="modal-instance modal-video-1">
-                                <div class="video-play-icon video-play-icon--sm modal-trigger"></div>
-                                <span class="h6">Watch The Overview</span>
-                                <div class="modal-container">
-                                    <div class="modal-content bg-dark" data-width="60%" data-height="60%">
-                                        <iframe src="https://www.youtube.com/embed/4QUVRm4UZA4?autoplay=1" allowfullscreen="allowfullscreen"></iframe>
-                                    </div>
-                                    <!--end of modal-content-->
-                                </div>
-                                <!--end of modal-container-->
-                            </div>
+                            <h2>Get cooking gas, in no time with Gas point</h2> 
+                            <a href="/agent/signup"><span style="color:white;"><i class="icon icon-Betvibes"></i>
+                             <span class="h6" style="font-size:10px">  Sign up as an agent</span></span> </a>
+                            
                             <!--end of modal instance-->
                         </div>
                         <div class="col-md-5 col-sm-8 col-sm-offset-2">

@@ -36,7 +36,7 @@
 <nav class="transition--fade">
             <div class="nav-bar" data-fixed-at="200">
                 <div class="nav-module logo-module left">
-                    <a href="index.html">
+                    <a href="#">
                         <img class="logo logo-dark" alt="logo" src="../../../img/logo-dark.png" />
                         <img class="logo logo-light" alt="logo" src="../../../img/logo-light.png" />
                     </a>
@@ -66,7 +66,7 @@
             </div>
         </nav>
        
-<div class="container">
+<div class="container" >
     <div class="row centered-form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
             <div class="panel panel-info">
@@ -108,7 +108,29 @@
                             </div>
                             <span class="text-danger">{!! $errors->first('email') !!}</span>
                         </div></div>
-
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="input-with-icon">
+                            <i class="icon icon-Tag-2"></i>
+                            
+                                         {!! Form::text('store_name', '', ['id' => 'store_name', 'class' => 'form-control', 'placeholder' => 'Store Name', 'required', 'autocomplete' => 'off']) !!}
+                                         </div>
+                                    <span class="text-danger">{!! $errors->first('store_name') !!}</span>
+                              
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="input-with-icon">
+                            <i class="icon icon-Shop-4"></i>
+                            
+                                         {!! Form::text('store_address', '', ['id' => 'store_address', 'class' => 'form-control', 'placeholder' => 'Store Address', 'required', 'autocomplete' => 'off']) !!}
+                                         </div>
+                                    <span class="text-danger">{!! $errors->first('store_address') !!}</span>
+                              
+                            </div>
+                        </div>
+                       
                         <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="input-with-icon"><i class="icon icon-Lock"></i>

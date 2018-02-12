@@ -4,7 +4,7 @@
 Gas Order
 @stop
 
-<br/><br/>
+<br/>
 @section('content')
 <div class="pac-card" id="pac-card">
       <div>

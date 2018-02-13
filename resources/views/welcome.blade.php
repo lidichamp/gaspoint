@@ -61,8 +61,8 @@
                     <div class="row pos-vertical-align-columns">
                         <div class="col-md-7 col-sm-8 col-sm-offset-2">
                             <h2>Get cooking gas, in no time with Gas point</h2> 
-                            <a href="/agent/signup"><span style="color:white;"><i class="icon icon-Betvibes"></i>
-                             <span class="h6" style="font-size:10px">  Sign up as an agent</span></span> </a>
+                            <a href="/user/signup"><span style="color:white;font-size:8px;"><i class="icon icon-Betvibes"></i></span> 
+                             <span class="h6" style="font-size:12px">  Sign up </span></a>
                             
                             <!--end of modal instance-->
                         </div>

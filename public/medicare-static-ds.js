@@ -6,7 +6,7 @@ function MedicareDataSource() {
   $.extend(this, new storeLocator.StaticDataFeed);
 
   var that = this;
-  $.get('medicare.csv', function(data) {
+  $.get('../gaspoint.csv', function(data) {
     that.setStores(that.parse_(data));
   });
 }

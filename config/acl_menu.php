@@ -20,6 +20,11 @@ return [
                 "route"       => "order",
                 "link"        => '/admin/order',
                 "permissions" => []
+        ],[
+                "name"        => "Register store",
+                "route"       => "store",
+                "link"        => '/admin/store',
+                "permissions" => []
         ],
             [
                 /*

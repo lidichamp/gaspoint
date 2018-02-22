@@ -14,7 +14,7 @@ class Store extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'address', 'lat','lng'
+        'name', 'street_address','city','state','postal_code','country', 'lat','lng'
     ];
 
     /**

@@ -77,7 +77,7 @@ Gas Order
                 <div class="alert alert-success">{!! $message !!}</div>
                 @endif
                 <div class="panel-body">
-                    {!! Form::open(["route" => 'store.save', "method" => "POST", "id" => "store_reg"]) !!}
+                    {!! Form::open(["route" => 'save.store', "method" => "POST", "id" => "store_reg"]) !!}
                        
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -154,35 +154,6 @@ Gas Order
   {{-- Js files --}}
   {!! HTML::script('packages/jacopo/laravel-authentication-acl/js/vendor/jquery-1.10.2.min.js') !!}
   {!! HTML::script('packages/jacopo/laravel-authentication-acl/js/vendor/password_strength/strength.js') !!}
-
-  <script>
-    $(document).ready(function() {
-      //------------------------------------
-      // password checking
-      //------------------------------------
-      var password1 		= $('#password1'); //id of first password field
-      var password2		= $('#password2'); //id of second password field
-      var passwordsInfo 	= $('#pass-info'); //id of indicator element
-
-      passwordStrengthCheck(password1,password2,passwordsInfo);
-
-      //------------------------------------
-      // captcha regeneration
-      //------------------------------------
-
-      $("#captcha-gen-button").click(function(e){
-      		e.preventDefault();
-
-      		$.ajax({
-              url: "/captcha-ajax",
-              method: "POST",
-              headers: { 'X-CSRF-Token' : '{!! csrf_token() !!}' }
-            }).done(function(image) {
-              $("#captcha-img-container").html(image);
-            });
-      	});
-    });
-  </script>
     <script src="../../../js/jquery-2.1.4.min.js"></script>
         <script src="../../../js/isotope.min.js"></script>
         <script src="../../../js/ytplayer.min.js"></script>

@@ -3,7 +3,6 @@
 @section('title')
 Gas Order
 @stop
-
 @section('content')
 <div class="pac-card" id="pac-card">
       <div>

@@ -36,7 +36,7 @@ MedicareDataSource.prototype.parse_ = function(csv) {
   var rows = csv.split('\n');
   var headings = this.parseRow_(rows[0]);
 
-  for (var i = 1, row; row = rows[i]; i++) {
+  for (var i = 240, row; row = rows[i]; i++) {
     row = this.toObject_(headings, this.parseRow_(row));
     var features = new storeLocator.FeatureSet;
     features.add(this.FEATURES_.getById('Wheelchair-' + row.Wheelchair));

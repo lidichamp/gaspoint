@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('phone');
             $table->integer('quantity')->unsigned();
             $table->string('others')->nullable();
+            $table->string('status')->default('pending');
             $table->integer('agent_id')->unsigned();
             $table->integer('client_id')->unsigned();
             $table->timestamps();

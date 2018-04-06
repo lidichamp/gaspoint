@@ -19,13 +19,13 @@ class OrderController extends Controller
         $addorder->address= $request['address'];
         $addorder->quantity= $request['quantity'];
         $addorder->agent_id= $request['agent_id'];
-        $addorder->client_id=$request->user('client')->id();
+        $addorder->client_id=$request->user('client')->id;
         $addorder->others= $request['others'];
         $addorder->phone= $request['phone'];
         $addorder->save();
-
+        notify()->success('Order Placed', 'Your gas order has been placed, the agent will contact you soon. ');
             
-    return redirect('client/home')->with('message','Your have successfully placed an order');
+    return redirect('client/home');
     }
     
     

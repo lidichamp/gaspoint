@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition register-page">
+<body class="hold-transition register-page" style="background-color:#18bc9c">
 <div class="register-box">
   <div class="register-logo">
     <a href="../../index2.html"><b>Gas</b>POINT</a>
@@ -72,7 +72,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" style="background-color:#1a252f">Register</button>
         </div>
         <!-- /.col -->
       </div>

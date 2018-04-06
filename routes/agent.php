@@ -1,13 +1,15 @@
 <?php
+use App\Order;
 
-Route::get('/home', function () {
+use Illuminate\Http\Request;
+Route::get('/home', function (Request $request) {
     $users[] = Auth::user();
     $users[] = Auth::guard()->user();
     $users[] = Auth::guard('agent')->user();
+    $id=$request->user('agent')->id;
+    $orders = Order::where('agent_id',$id)->get();
+  //  dd($orders->get());
 
-    $orders = Order::where('agent_id', auth()->id())->get();
-    //dd($users);
-
-    return view('agent.home');
-})->name('home', compact('orders'));
+    return view('agent.home', compact('orders','id'));
+})->name('home');
 

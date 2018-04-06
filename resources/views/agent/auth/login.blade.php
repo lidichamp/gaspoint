@@ -1,7 +1,7 @@
 @extends('agent.layout.auth')
 
 @section('content')
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-color:#18bc9c">
 <div class="login-box">
   <div class="login-logo">
     <a href="#"><b>Gas</b>POINT</a>

@@ -618,8 +618,8 @@ $('.top-right').notify({
                   <td> {{$order->other}}</td>
                   <td>{{$order->status}}</td>
                   <td>
-                    <a style="color:green" href="/orders/deliver/{{$order->id}}"><i class="fa fa-check"></i></a>
-                    <a style="color:red" href="/orders/cancel/{{$order->id}}"><i class="fa fa-times"></i></a>
+                    <a style="color:green" href="/orders/deliver/{{$order->id}}"><i class="fa fa-check" title="mark as complete"></i></a>
+                    <a style="color:red" href="/orders/cancel/{{$order->id}}"><i class="fa fa-times" title="cancel order"></i></a>
                   </td>
                 </tr>
                 @endforeach

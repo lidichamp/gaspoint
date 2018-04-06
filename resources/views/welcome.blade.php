@@ -47,6 +47,15 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
             </li>
+            <li class="nav-item dropdown mx-0 mx-lg-1">
+              <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/client/login">Buyer</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/agent/login">Agent</a>
+        </div>
+
+            </li>
           </ul>
         </div>
       </div>

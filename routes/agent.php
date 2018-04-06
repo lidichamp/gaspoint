@@ -6,10 +6,10 @@ Route::get('/home', function (Request $request) {
     $users[] = Auth::user();
     $users[] = Auth::guard()->user();
     $users[] = Auth::guard('agent')->user();
-    $id=$request->user('agent')->id;
-    $orders = Order::where('agent_id',$id)->get();
+    $user=$request->user('agent');
+    $orders = Order::where('agent_id',$user->id)->get();
   //  dd($orders->get());
 
-    return view('agent.home', compact('orders','id'));
+    return view('agent.home', compact('orders','user'));
 })->name('home');
 

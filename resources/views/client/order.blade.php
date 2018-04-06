@@ -22,6 +22,88 @@
     <script src="/dist/store-locator.min.js"></script>
 <script src="/places.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/storelocator.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.css">
+
+<script>
+    @if(Session::has('success'))
+
+$('.top-right').notify({
+
+   message: { text: "{{ Session::get('success') }}" }
+
+ }).show();
+
+@php
+
+  Session::forget('success');
+
+@endphp
+
+@endif
+
+
+@if(Session::has('info'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('info') }}" },
+
+   type:'info'
+
+ }).show();
+
+ @php
+
+   Session::forget('info');
+
+ @endphp
+
+@endif
+
+
+@if(Session::has('warning'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('warning') }}" },
+
+   type:'warning'
+
+ }).show();
+
+ @php
+
+   Session::forget('warning');
+
+ @endphp
+
+@endif
+
+
+@if(Session::has('error'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('error') }}" },
+
+   type:'danger'
+
+ }).show();
+
+ @php
+
+   Session::forget('error');
+
+ @endphp
+
+@endif
+
+
+
+</script>
+
 <!--  <script src="/infobubble-compiled.js"></script>
     <script src="/medicare-static-ds.js"></script>
     <script src="/custom.js"></script>-->
@@ -52,11 +134,10 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>G</b>P</span>
       <!-- logo for regular state and mobile devices -->
@@ -191,8 +272,8 @@
               <li class="footer"><a href="#">View all</a></li>
             </ul>
           </li>
-          <!-- Tasks: style can be found in dropdown.less 
-          <li class="dropdown tasks-menu">
+          <!-- Tasks: style can be found in dropdown.less -->
+        <!--  <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
               <span class="label label-danger">9</span>
@@ -200,8 +281,8 @@
             <ul class="dropdown-menu">
               <li class="header">You have 9 tasks</li>
               <li>
-                <!-- inner menu: contains the actual data 
-                <ul class="menu">
+                <!-- inner menu: contains the actual data -->
+             <!--   <ul class="menu">
                   <li><!-- Task item 
                     <a href="#">
                       <h3>
@@ -216,7 +297,7 @@
                       </div>
                     </a>
                   </li>
-                  <!-- end task item 
+                  <!-- end task item
                   <li><!-- Task item 
                     <a href="#">
                       <h3>
@@ -272,39 +353,25 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <img src="/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{$user->name}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
+                {{$user->name}}<br>
+                 Buyer
+                  <small>Buyer since {{$user->created_at->diffForHumans()}}</small>
+                </p><br>
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
+              
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
+                
                 <div class="pull-right">
                 <a href="{{ url('/client/logout') }}"
                                         onclick="event.preventDefault();
@@ -334,10 +401,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{$user->name}}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -352,7 +419,7 @@
               </span>
         </div>
       </form>
-search form -->
+      search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header"></li>
@@ -365,10 +432,10 @@ search form -->
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> Place an order</a></li>
-            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>View Orders</a></li>
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> View Orders</a></li>
           </ul>
         </li>
-       <!-- <li class="treeview">
+      <!--  <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Layout Options</span>
@@ -549,11 +616,11 @@ search form -->
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+            <span class="info-box-icon bg-aqua"><i class="fa fa-archive"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">CPU Traffic</span>
-              <span class="info-box-number">90<small>%</small></span>
+              <span class="info-box-text">Completed orders</span>
+              <span class="info-box-number">{{$orders->where('status','completed')->count()}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -562,11 +629,11 @@ search form -->
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+            <span class="info-box-icon bg-red"><i class="fa fa-times"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Likes</span>
-              <span class="info-box-number">41,410</span>
+              <span class="info-box-text">Canceled Orders</span>
+              <span class="info-box-number">{{$orders->where('status','cancelled')->count()}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -582,8 +649,8 @@ search form -->
             <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Sales</span>
-              <span class="info-box-number">760</span>
+              <span class="info-box-text">Pending Orders</span>
+              <span class="info-box-number">{{$orders->where('status','pending')->count()}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -595,8 +662,8 @@ search form -->
             <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">New Members</span>
-              <span class="info-box-number">2,000</span>
+              <span class="info-box-text">Agents Available</span>
+              <span class="info-box-number">{{$agents->count()}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -604,8 +671,6 @@ search form -->
         </div>
         <!-- /.col -->
       </div>
-      <!-- /.row -->
-
       <div class="row">
         <div class="col-md-12">
           <div class="box">

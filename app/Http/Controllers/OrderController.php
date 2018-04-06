@@ -23,10 +23,22 @@ class OrderController extends Controller
         $addorder->others= $request['others'];
         $addorder->phone= $request['phone'];
         $addorder->save();
-        session()->put('success','Item created successfully.');
-    return redirect('client/home');
+    return redirect('agent/home')->with('success','Item created successfully.');
     }
     
-    
+    public function deliverOrder(Request $request,$id)
+    {
+        $deliverorder=Order::find($id);
+        $deliverorder->status="complete";
+        $deliverorder->update();
+    return redirect('agent/home')->with('success','Order has been marked as delivered.');
+    }
+    public function cancelOrder(Request $request,$id)
+    {
+        $cancelorder=Order::find($id);
+        $cancelorder->status="cancelled";
+        $cancelorder->update();
+    return redirect('agent/home')->with('Danger','Order has been cancelled.');
+    }
           
 }

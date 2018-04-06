@@ -27,6 +27,88 @@
   <link rel="stylesheet" href="/bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.css">
+
+  <script>
+    @if(Session::has('success'))
+
+$('.top-right').notify({
+
+   message: { text: "{{ Session::get('success') }}" }
+
+ }).show();
+
+@php
+
+  Session::forget('success');
+
+@endphp
+
+@endif
+
+
+@if(Session::has('info'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('info') }}" },
+
+   type:'info'
+
+ }).show();
+
+ @php
+
+   Session::forget('info');
+
+ @endphp
+
+@endif
+
+
+@if(Session::has('warning'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('warning') }}" },
+
+   type:'warning'
+
+ }).show();
+
+ @php
+
+   Session::forget('warning');
+
+ @endphp
+
+@endif
+
+
+@if(Session::has('error'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('error') }}" },
+
+   type:'danger'
+
+ }).show();
+
+ @php
+
+   Session::forget('error');
+
+ @endphp
+
+@endif
+
+
+
+</script>
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -521,6 +603,8 @@
                   <th>Quantity</th>
                   <th>Phone</th>
                   <th>Comments</th>
+                  <th>Status</th>
+                  <th>Set Status</th>
                 </tr>
                 @php 
                 $i=1;
@@ -529,10 +613,14 @@
                 <tr>
                   <td>{{$i++}}</td>
                   <td> {{$order->address}}</td>
-                  <td> {{$order->quantity}} Kg
-                  </td>
+                  <td> {{$order->quantity}} Kg</td>
                   <td> {{$order->phone}}</td>
                   <td> {{$order->other}}</td>
+                  <td>{{$order->status}}</td>
+                  <td>
+                    <a style="color:green" href="/orders/deliver/{{$order->id}}"><i class="fa fa-check"></i></a>
+                    <a style="color:red" href="/orders/cancel/{{$order->id}}"><i class="fa fa-times"></i></a>
+                  </td>
                 </tr>
                 @endforeach
               </table>

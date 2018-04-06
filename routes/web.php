@@ -75,6 +75,8 @@ Route::group(['prefix' => 'orders'],function()
 {
   $users[] = Auth::user();
   $users[] = Auth::guard()->user();
-  
+  $users[] = Auth::guard('agent')->user();
   Route::post('/save', 'OrderController@createOrder')->name('create.order');
+  Route::get('/cancel/{id}', 'OrderController@cancelOrder')->name('cancel.order');
+  Route::get('/deliver/{id}', 'OrderController@deliverOrder')->name('deliver.order');
 });

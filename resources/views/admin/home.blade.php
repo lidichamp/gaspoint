@@ -19,7 +19,88 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.js"></script>
 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.css">
+
+
+<script>
+    @if(Session::has('success'))
+
+$('.top-right').notify({
+
+   message: { text: "{{ Session::get('success') }}" }
+
+ }).show();
+
+@php
+
+  Session::forget('success');
+
+@endphp
+
+@endif
+
+
+@if(Session::has('info'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('info') }}" },
+
+   type:'info'
+
+ }).show();
+
+ @php
+
+   Session::forget('info');
+
+ @endphp
+
+@endif
+
+
+@if(Session::has('warning'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('warning') }}" },
+
+   type:'warning'
+
+ }).show();
+
+ @php
+
+   Session::forget('warning');
+
+ @endphp
+
+@endif
+
+
+@if(Session::has('error'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('error') }}" },
+
+   type:'danger'
+
+ }).show();
+
+ @php
+
+   Session::forget('error');
+
+ @endphp
+
+@endif
+
+
+
+</script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>

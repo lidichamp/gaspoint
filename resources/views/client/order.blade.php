@@ -191,7 +191,7 @@
               <li class="footer"><a href="#">View all</a></li>
             </ul>
           </li>
-          <!-- Tasks: style can be found in dropdown.less -->
+          <!-- Tasks: style can be found in dropdown.less 
           <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
@@ -200,9 +200,9 @@
             <ul class="dropdown-menu">
               <li class="header">You have 9 tasks</li>
               <li>
-                <!-- inner menu: contains the actual data -->
+                <!-- inner menu: contains the actual data 
                 <ul class="menu">
-                  <li><!-- Task item -->
+                  <li><!-- Task item 
                     <a href="#">
                       <h3>
                         Design some buttons
@@ -216,8 +216,8 @@
                       </div>
                     </a>
                   </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
+                  <!-- end task item 
+                  <li><!-- Task item 
                     <a href="#">
                       <h3>
                         Create a nice theme
@@ -231,8 +231,8 @@
                       </div>
                     </a>
                   </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
+                  <!-- end task item 
+                  <li><!-- Task item 
                     <a href="#">
                       <h3>
                         Some task I need to do
@@ -246,8 +246,8 @@
                       </div>
                     </a>
                   </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
+                  <!-- end task item 
+                  <li><!-- Task item 
                     <a href="#">
                       <h3>
                         Make beautiful transitions
@@ -261,7 +261,7 @@
                       </div>
                     </a>
                   </li>
-                  <!-- end task item -->
+                  <!-- end task item 
                 </ul>
               </li>
               <li class="footer">

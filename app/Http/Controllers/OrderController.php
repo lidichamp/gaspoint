@@ -23,8 +23,7 @@ class OrderController extends Controller
         $addorder->others= $request['others'];
         $addorder->phone= $request['phone'];
         $addorder->save();
-        notify()->success('Order Placed', 'Your gas order has been placed, the agent will contact you soon. ');
-            
+        session()->put('success','Item created successfully.');
     return redirect('client/home');
     }
     

@@ -22,6 +22,88 @@
     <script src="/dist/store-locator.min.js"></script>
 <script src="/places.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/storelocator.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.css">
+
+<script>
+    @if(Session::has('success'))
+
+$('.top-right').notify({
+
+   message: { text: "{{ Session::get('success') }}" }
+
+ }).show();
+
+@php
+
+  Session::forget('success');
+
+@endphp
+
+@endif
+
+
+@if(Session::has('info'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('info') }}" },
+
+   type:'info'
+
+ }).show();
+
+ @php
+
+   Session::forget('info');
+
+ @endphp
+
+@endif
+
+
+@if(Session::has('warning'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('warning') }}" },
+
+   type:'warning'
+
+ }).show();
+
+ @php
+
+   Session::forget('warning');
+
+ @endphp
+
+@endif
+
+
+@if(Session::has('error'))
+
+ $('.top-right').notify({
+
+   message: { text: "{{ Session::get('error') }}" },
+
+   type:'danger'
+
+ }).show();
+
+ @php
+
+   Session::forget('error');
+
+ @endphp
+
+@endif
+
+
+
+</script>
+
 <!--  <script src="/infobubble-compiled.js"></script>
     <script src="/medicare-static-ds.js"></script>
     <script src="/custom.js"></script>-->
@@ -52,11 +134,10 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-@include('notify::notify')
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>G</b>P</span>
       <!-- logo for regular state and mobile devices -->
@@ -192,7 +273,7 @@
             </ul>
           </li>
           <!-- Tasks: style can be found in dropdown.less -->
-          <li class="dropdown tasks-menu">
+        <!--  <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
               <span class="label label-danger">9</span>
@@ -201,8 +282,8 @@
               <li class="header">You have 9 tasks</li>
               <li>
                 <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <li><!-- Task item -->
+             <!--   <ul class="menu">
+                  <li><!-- Task item 
                     <a href="#">
                       <h3>
                         Design some buttons
@@ -216,8 +297,8 @@
                       </div>
                     </a>
                   </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
+                  <!-- end task item
+                  <li><!-- Task item 
                     <a href="#">
                       <h3>
                         Create a nice theme
@@ -231,8 +312,8 @@
                       </div>
                     </a>
                   </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
+                  <!-- end task item 
+                  <li><!-- Task item 
                     <a href="#">
                       <h3>
                         Some task I need to do
@@ -246,8 +327,8 @@
                       </div>
                     </a>
                   </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
+                  <!-- end task item 
+                  <li><!-- Task item 
                     <a href="#">
                       <h3>
                         Make beautiful transitions
@@ -261,7 +342,7 @@
                       </div>
                     </a>
                   </li>
-                  <!-- end task item -->
+                  <!-- end task item 
                 </ul>
               </li>
               <li class="footer">
@@ -365,7 +446,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> Place an order</a></li>
-            <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> View Orders</a></li>
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> View Orders</a></li>
           </ul>
         </li>
       <!--  <li class="treeview">
@@ -890,6 +971,7 @@
 			autoComplete: true
 		});
 	});
+  
 </script>
 <script src="/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>

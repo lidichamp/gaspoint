@@ -89,7 +89,7 @@ class RegisterController extends Controller
         $store->save();
         dump($store);
         
-        return redirect(route('login')); 
+        return redirect('/agent/login'); 
          
 
     }

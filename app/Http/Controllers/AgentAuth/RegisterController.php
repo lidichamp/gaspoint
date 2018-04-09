@@ -9,7 +9,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
-
+use Charts;
 class RegisterController extends Controller
 {
     /*

@@ -7,6 +7,8 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
+
+        {!! Charts::styles() !!}
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
@@ -27,7 +29,6 @@
   <link rel="stylesheet" href="/bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.js"></script>
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.css">
 
@@ -627,7 +628,7 @@ $('.top-right').notify({
             
              
              </div>
-              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">  {!! $chart->html() !!}</div>
             </div>
           </div>
           <!-- /.nav-tabs-custom -->
@@ -905,6 +906,8 @@ $('.top-right').notify({
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
+{!! Charts::scripts() !!}
+        {!! $chart->script() !!}
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
@@ -912,6 +915,8 @@ $('.top-right').notify({
 <!-- Bootstrap 3.3.7 -->
 <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.js"></script>
+
 <script src="/bower_components/raphael/raphael.min.js"></script>
 <script src="/bower_components/morris.js/morris.min.js"></script>
 <!-- Sparkline -->

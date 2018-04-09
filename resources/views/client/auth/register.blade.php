@@ -31,7 +31,7 @@
 <body class="hold-transition register-page" style="background-color:#18bc9c ">
 <div class="register-box">
   <div class="register-logo" >
-    <a href="../../index2.html" style="color:#fff"><b>GASPOINT</B></a>
+   <a href="/"> <b style="color:#fff">GASPOINT</b></a>
   </div>
 
   <div class="register-box-body">

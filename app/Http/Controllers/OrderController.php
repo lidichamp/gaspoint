@@ -23,7 +23,7 @@ class OrderController extends Controller
         $addorder->others= $request['others'];
         $addorder->phone= $request['phone'];
         $addorder->save();
-    return redirect('agent/home')->with('success','Item created successfully.');
+    return redirect('client/home')->with('success','Your gas order has been placed.');
     }
     
     public function deliverOrder(Request $request,$id)
@@ -31,7 +31,7 @@ class OrderController extends Controller
         $deliverorder=Order::find($id);
         $deliverorder->status="complete";
         $deliverorder->update();
-    return redirect('agent/home')->with('success','Order has been marked as delivered.');
+    return redirect('agent/home')->with('success');
     }
     public function cancelOrder(Request $request,$id)
     {

@@ -8,7 +8,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Administartor Login</p>
+    <p class="login-box-msg">Administrator Login</p>
     <form role="form" method="POST" action="{{ url('/admin/login') }}">
                    
     {{ csrf_field() }}

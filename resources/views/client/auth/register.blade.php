@@ -31,11 +31,11 @@
 <body class="hold-transition register-page" style="background-color:#18bc9c ">
 <div class="register-box">
   <div class="register-logo" >
-   <a href="/"> <b style="color:#fff">GASPOINT</b></a>
+      <a href="/" style="color:#fff"><img src="/img/logo.png" width="50%"></a>
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register as a member</p>
+    <p class="login-box-msg">Register as a Client</p>
 
     <form class="form-horizontal" role="form" method="POST" action="{{ url('/client/register') }}">
                         {{ csrf_field() }}

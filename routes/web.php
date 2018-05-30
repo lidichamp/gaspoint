@@ -20,8 +20,8 @@ Route::group(['prefix' => 'admin'], function () {
   Route::post('/login', 'AdminAuth\LoginController@login');
   Route::post('/logout', 'AdminAuth\LoginController@logout')->name('logout');
 
-  Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('register');
-  Route::post('/register', 'AdminAuth\RegisterController@register');
+  //Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('register');
+  //Route::post('/register', 'AdminAuth\RegisterController@register');
   Route::get('/assign/agent/{id}','FieldagentController@showApprove')->name('agent.assign');
   Route::post('/approve/agent/{id}','FieldagentController@Approve')->name('agent.approve');
   Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');

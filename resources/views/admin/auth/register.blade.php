@@ -31,7 +31,7 @@
 <body class="hold-transition register-page" style="background-color:#18bc9c">
 <div class="register-box">
   <div class="register-logo">
-    <a href="../../index2.html"><b>Gas</b>POINT</a>
+    <a href="/" style="color:#fff"><img src="/img/logo.png" width="50%"></a>
   </div>
 
   <div class="register-box-body">

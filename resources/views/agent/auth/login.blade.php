@@ -4,7 +4,7 @@
 <body class="hold-transition login-page" style="background-color:#18bc9c">
 <div class="login-box">
   <div class="login-logo">
-    <a href="/" style="color:#fff"><b>GASPOINT</b></a>
+    <a href="/" style="color:#fff"><img src="/img/logo.png" width="50%"></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">

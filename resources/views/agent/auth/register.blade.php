@@ -19,7 +19,7 @@
 <body class="hold-transition register-page" style="background-color:#18bc9c">
 <div class="register-box">
   <div class="register-logo">
-   <a href="/" style="text-decoration:none"> <b style="color:#fff">GASPOINT</b></a>
+    <a href="/" style="color:#fff"><img src="/img/logo.png" width="50%"></a>
   </div>
 
 <form method="POST" action="{{ url('/agent/save') }}">

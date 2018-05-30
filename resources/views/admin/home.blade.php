@@ -50,7 +50,7 @@
   @include('notify::notify')
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="/" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>G</b>P</span>
       <!-- logo for regular state and mobile devices -->
@@ -143,7 +143,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>View Orders</a></li>
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>View Orders</a></li>
 
           </ul>
         <ul class=" treeview-menu">

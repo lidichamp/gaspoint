@@ -8,7 +8,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">Depot Login</p>
     <form role="form" method="POST" action="{{ url('/agent/login') }}">
                    
     {{ csrf_field() }}

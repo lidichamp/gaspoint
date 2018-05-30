@@ -22,7 +22,8 @@ Route::group(['prefix' => 'admin'], function () {
 
   Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('register');
   Route::post('/register', 'AdminAuth\RegisterController@register');
-
+  Route::get('/assign/agent/{id}','FieldagentController@showApprove')->name('agent.assign');
+  Route::post('/approve/agent/{id}','FieldagentController@Approve')->name('agent.approve');
   Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
   Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
   Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
@@ -79,4 +80,18 @@ Route::group(['prefix' => 'orders'],function()
   Route::post('/save', 'OrderController@createOrder')->name('create.order');
   Route::get('/cancel/{id}', 'OrderController@cancelOrder')->name('cancel.order');
   Route::get('/deliver/{id}', 'OrderController@deliverOrder')->name('deliver.order');
+});
+
+Route::group(['prefix' => 'fieldagent'], function () {
+  Route::get('/login', 'FieldagentAuth\LoginController@showLoginForm')->name('login');
+  Route::post('/login', 'FieldagentAuth\LoginController@login');
+  Route::post('/logout', 'FieldagentAuth\LoginController@logout')->name('logout');
+
+  Route::get('/register', 'FieldagentAuth\RegisterController@showRegistrationForm')->name('register');
+  Route::post('/register', 'FieldagentAuth\RegisterController@register');
+
+  Route::post('/password/email', 'FieldagentAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+  Route::post('/password/reset', 'FieldagentAuth\ResetPasswordController@reset')->name('password.email');
+  Route::get('/password/reset', 'FieldagentAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+  Route::get('/password/reset/{token}', 'FieldagentAuth\ResetPasswordController@showResetForm');
 });

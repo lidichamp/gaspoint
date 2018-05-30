@@ -13,7 +13,6 @@ Route::get('/home', function (Request $request) {
     ->where('agent_id',$user->id)
     ->select('quantity', DB::raw('count(*) as total'))
     ->groupBy('quantity');
-    //dd($orders->pluck('quantity'));
     $chart = Charts::create('bar', 'highcharts')
     ->title('Orders')
     ->elementLabel('Total')

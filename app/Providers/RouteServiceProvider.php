@@ -39,6 +39,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapFieldagentRoutes();
+
         $this->mapClientRoutes();
 
         $this->mapStoreOwnerRoutes();
@@ -123,6 +125,25 @@ class RouteServiceProvider extends ServiceProvider
             'namespace' => $this->namespace,
         ], function ($router) {
             require base_path('routes/client.php');
+        });
+    }
+
+    /**
+     * Define the "fieldagent" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapFieldagentRoutes()
+    {
+        Route::group([
+            'middleware' => ['web', 'fieldagent', 'auth:fieldagent'],
+            'prefix' => 'fieldagent',
+            'as' => 'fieldagent.',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('routes/fieldagent.php');
         });
     }
 

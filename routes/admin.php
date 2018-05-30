@@ -1,7 +1,6 @@
 <?php
 use App\Store;
 use App\DataTables\OrdersDataTable;
-use DB;
 Route::get('/home', function (OrdersDataTable $dataTable) {
     $users[] = Auth::user();
     $users[] = Auth::guard()->user();

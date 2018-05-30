@@ -51,6 +51,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'fieldagent' => \App\Http\Middleware\RedirectIfNotFieldagent::class,
+        'fieldagent.guest' => \App\Http\Middleware\RedirectIfFieldagent::class,
         'client' => \App\Http\Middleware\RedirectIfNotClient::class,
         'client.guest' => \App\Http\Middleware\RedirectIfClient::class,
         'store_owner' => \App\Http\Middleware\RedirectIfNotStoreOwner::class,

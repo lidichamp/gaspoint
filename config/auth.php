@@ -36,6 +36,11 @@ return [
     */
 
     'guards' => [
+        'fieldagent' => [
+            'driver' => 'session',
+            'provider' => 'fieldagents',
+        ],
+
         'client' => [
             'driver' => 'session',
             'provider' => 'clients',
@@ -85,6 +90,11 @@ return [
     */
 
     'providers' => [
+        'fieldagents' => [
+            'driver' => 'eloquent',
+            'model' => App\Fieldagent::class,
+        ],
+
         'clients' => [
             'driver' => 'eloquent',
             'model' => App\Client::class,
@@ -132,6 +142,12 @@ return [
     */
 
     'passwords' => [
+        'fieldagents' => [
+            'provider' => 'fieldagents',
+            'table' => 'fieldagent_password_resets',
+            'expire' => 60,
+        ],
+
         'clients' => [
             'provider' => 'clients',
             'table' => 'client_password_resets',

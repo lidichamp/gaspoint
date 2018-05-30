@@ -41,17 +41,17 @@
                         {{ csrf_field() }}
 
         <div class="form-group has-feedback">
-            <input id="name" type="text" class="form-control" name="name" value="Full name" autofocus>
+            <input id="name" type="text" class="form-control" name="name" placeholder="Full name" autofocus>
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 
         </div>
         <div class="form-group has-feedback">
-            <input id="email" type="email" class="form-control" name="email" value="Email">
+            <input id="email" type="email" class="form-control" name="email" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
     </div>
 
       <div class="form-group has-feedback">
-      <input id="password" type="password" class="form-control" name="password" value="password">
+      <input id="password" type="password" class="form-control" name="password" placeholder="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
             

@@ -19,6 +19,8 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('login');
   Route::post('/login', 'AdminAuth\LoginController@login');
   Route::post('/logout', 'AdminAuth\LoginController@logout')->name('logout');
+  Route::get('/manage/depots','DepotController@manage_depots')->name('manage.depots');
+    Route::get('/manage/agents','DepotController@manage_agents')->name('manage.depots');
 
   //Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('register');
   //Route::post('/register', 'AdminAuth\RegisterController@register');
@@ -37,7 +39,6 @@ Route::group(['prefix' => 'agent'], function () {
 
   Route::get('/register', 'AgentAuth\RegisterController@showRegistrationForm')->name('register');
   Route::post('/save', 'AgentAuth\RegisterController@create');
-
   Route::post('/password/email', 'AgentAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
   Route::post('/password/reset', 'AgentAuth\ResetPasswordController@reset')->name('password.email');
   Route::get('/password/reset', 'AgentAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');

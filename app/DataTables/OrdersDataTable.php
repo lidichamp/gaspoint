@@ -28,7 +28,7 @@ class OrdersDataTable extends DataTable
      */
     public function query()
     {
-        $query = Order::query()->select('orders.id as id','clients.name as client','stores.name as depot','orders.address as drop_of_location','orders.quantity as quantity(kg)','orders.payment_method','orders.status')
+        $query = Order::query()->select('orders.id as id','clients.name as client','stores.name as depot','orders.address as drop_off_location','orders.quantity as quantity(kg)','orders.payment_method','orders.status')
         ->leftJoin('clients','orders.client_id','clients.id')
         ->leftJoin('stores','orders.agent_id','stores.agent_id');
 
@@ -79,7 +79,7 @@ class OrdersDataTable extends DataTable
             'id',
             'client',
             'depot',
-            'drop_of_location',
+            'drop_off_location',
             'quantity(kg)',
             'payment_method',
             'status'

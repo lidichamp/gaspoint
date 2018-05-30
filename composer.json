@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "Yajra/laravel-datatables-oracle": "~8.0",
         "bpocallaghan/notify": "^2.1",
         "consoletvs/charts": "5.*",
         "fideloper/proxy": "~3.3",
@@ -13,7 +14,8 @@
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "league/csv": "^9.1",
-        "pusher/pusher-php-server": "^3.0"
+        "pusher/pusher-php-server": "^3.0",
+        "yajra/laravel-datatables-buttons": "^2.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

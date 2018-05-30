@@ -31,14 +31,14 @@ class OrderController extends Controller
         $deliverorder=Order::find($id);
         $deliverorder->status="complete";
         $deliverorder->update();
-    return redirect('agent/home')->with('success');
+    return back()->with('success');
     }
     public function cancelOrder(Request $request,$id)
     {
         $cancelorder=Order::find($id);
         $cancelorder->status="cancelled";
         $cancelorder->update();
-    return redirect('agent/home')->with('Danger','Order has been cancelled.');
+    return back()->with('Danger','Order has been cancelled.');
     }
           
 }

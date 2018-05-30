@@ -52,7 +52,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/client/login">Buyer</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/agent/login">Agent</a>
+          <a class="dropdown-item" href="/agent/login">Depot/Agent</a>
         </div>
 
             </li>
